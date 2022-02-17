@@ -11,8 +11,6 @@ def add(x, y):
 
 def get_coins_names():
     url = 'https://api.coinpaprika.com/v1/coins'
-    if random.random() < 0.2:
-        url = 'https://api.coinpaprika.com/v1/coins123123132312'
     response = requests.get(url, timeout=10)
     assert response.status_code == 200
     coins_list = response.json()

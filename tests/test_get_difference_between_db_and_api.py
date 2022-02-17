@@ -15,6 +15,9 @@ class TestGetCoinNames:
     @patch('main.requests.get')
     @patch.object(CoinModel.objects, 'filter')
     def test_getting_data_with_patching(self, filter_patch, get_patch):
+        """
+        We can patch different objects in the same test case, this allows finer control over whats returned
+        """
         object_returned_from_get = Mock(status_code=200)
         object_returned_from_get.json.return_value = [
             {"name": "bitcoin"}
