@@ -1,9 +1,6 @@
-from unittest.mock import patch, Mock
-
 import pytest
 
-from django_like import CoinModel
-from main import add, get_coins_names
+from examples.django_like import CoinModel
 
 
 @pytest.fixture()

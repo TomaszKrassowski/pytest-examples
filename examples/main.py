@@ -2,7 +2,7 @@ import random
 
 import requests
 
-from django_like import CoinModel
+from examples.django_like import CoinModel
 
 
 def add(x, y):

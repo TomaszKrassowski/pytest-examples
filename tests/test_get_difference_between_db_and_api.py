@@ -2,8 +2,8 @@ from unittest.mock import patch, Mock
 
 import pytest
 
-from django_like import CoinModel
-from main import get_difference_between_api_and_db
+from examples.django_like import CoinModel
+from examples.main import get_difference_between_api_and_db
 
 
 class TestGetCoinNames:
@@ -12,7 +12,7 @@ class TestGetCoinNames:
         difference = get_difference_between_api_and_db()
         assert difference != 0
 
-    @patch('main.requests.get')
+    @patch('examples.main.requests.get')
     @patch.object(CoinModel.objects, 'filter')
     def test_getting_data_with_patching(self, filter_patch, get_patch):
         """

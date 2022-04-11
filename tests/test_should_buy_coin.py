@@ -2,8 +2,8 @@ from unittest.mock import patch, Mock
 
 import pytest
 
-from django_like import CoinModel
-from main import get_difference_between_api_and_db, should_buy_coin
+from examples.django_like import CoinModel
+from examples.main import get_difference_between_api_and_db, should_buy_coin
 
 
 class TestShouldBuyCoin:

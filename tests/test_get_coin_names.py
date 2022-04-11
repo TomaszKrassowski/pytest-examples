@@ -2,7 +2,7 @@ from unittest.mock import patch, Mock, MagicMock
 
 import pytest
 
-from main import add, get_coins_names
+from examples.main import add, get_coins_names
 
 
 @pytest.fixture()
@@ -34,7 +34,7 @@ class TestGetCoinNames:
         names = get_coins_names()
         assert "Bitcoin" in names
 
-    @patch('main.requests.get')
+    @patch('examples.main.requests.get')
     def test_getting_data_with_patching(self, get_patch):
         """
         This test case mocks the object returned from "get" function.
@@ -59,7 +59,7 @@ class TestGetCoinNames:
         assert "bitcoin" in names
         assert len(names) == 1
 
-    @patch('main.requests.get')
+    @patch('examples.main.requests.get')
     def test_correct_url_called(self, get_patch):
         """
         We can check if function was called with expected arguments
@@ -71,7 +71,7 @@ class TestGetCoinNames:
 
         get_patch.assert_called_with('https://api.coinpaprika.com/v1/coins', timeout=10)
 
-    @patch('main.requests.get')
+    @patch('examples.main.requests.get')
     def test_getting_data_with_patching_and_fixture(self, get_patch, request_get_mock, bitcoin_data):
         """
         Patch argument comes before fixtures
@@ -85,7 +85,7 @@ class TestGetCoinNames:
         assert "Bitcoin" in names
         assert len(names) == 1
 
-    @patch('main.requests.get')
+    @patch('examples.main.requests.get')
     def test_getting_data_with_more_return_values(self, get_patch, request_get_mock, bitcoin_data):
         """
         We can specify that different calls have different return values
