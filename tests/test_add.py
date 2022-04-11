@@ -1,6 +1,6 @@
 import pytest
 
-from main import add
+from examples.main import add
 
 
 class TestAddFunction:
